@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="ie6 ie" lang="pl" dir="ltr"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 ie" lang="pl" dir="ltr"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 ie" lang="pl" dir="ltr"> <![endif]-->
+<!--[if gt IE 8]> <!--> <html class="" lang="pl" dir="ltr"> <!--<![endif]-->
+
+<!-- Mirrored from 2012.dcwroc.pl/sesje/drupal-multisite-w-praktyce-czyli-o-gaia-dystrybucji-drupala-uzywanej-w-mr by HTTrack Website Copier/3.x [XR&CO'2010], Mon, 20 Jan 2014 14:50:17 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta property="fb:app_id" content=""/>
+
+<meta property="og:title" content="Drupal multisite w praktyce - czyli o GAIA - dystrybucji Drupala używanej w MR" />
+<meta property="og:description" content="Ten wykład miałby charakter case-study. Byłaby to kontynuacja wykładu Mediów Regionalnych który odbył się w zeszłym roku w II UWr, ale bardziej z naciskiem na aspekty techniczne. Ze względu na ogranic" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="DrupalCamp Wroclaw" />
+<link rel="shortcut icon" href="../../sites/default/files/dcamp_favicon/index.jpg" type="image/x-icon" />
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+  <title>Drupal multisite w praktyce - czyli o GAIA - dystrybucji Drupala używanej w MR | DrupalCamp Wroclaw</title>
+  <link type="text/css" rel="stylesheet" media="all" href="../../sites/default/files/css/css_c60ddbc830133c67558033eda777a641/index.css" />
+  <script type="text/javascript" src="../../sites/default/files/js/js_c36a5e599f47b5e25fda025f9f1c578c/index.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/" });
+//--><!]]>
+</script>
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  
+  <!-- Start Google Analytics -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-30097922-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics -->
+
+</head>
+
+<body class="not-front not-logged-in page-node node-type-session no-sidebars i18n-pl">
+
+    <div id="skip-link">
+      <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+              <a href="#navigation" class="element-invisible element-focusable">Skip to navigation</a>
+          </div>
+
+    <header id="header" role="banner" class="clearfix">
+            
+     <nav id="navigation-top" role="navigation" class="clearfix ">
+         <div id="top-content">
+                            <h2 class="element-invisible">Secondary menu</h2><ul id="secondary-menu" class="links clearfix"><li class="menu-1392 first"><a href="http://www.facebook.com/DrupalCampWroclaw2012" title="Nasza grupa na Facebook">Facebook</a></li>
+<li class="menu-1382"><a href="http://twitter.com/#!/dcwroc" title="Twitter Drupal Camp Wrocław">Twitter</a></li>
+<li class="menu-1393 last"><a href="../../contact/index.html" title="Skontaktuj się z nami">Kontakt</a></li>
+</ul>                           
+         
+                                                  <section id="block-menu-menu-user-menu" class="block block-menu clearfix">
+
+  
+  <div class="content">
+        <ul class="menu"><li class="leaf first last"><a href="../../user/login/index.html" title="">Zaloguj się</a></li>
+</ul>  </div>
+
+</section> <!-- /.block -->
+                           
+            </div>
+         </nav> <!-- /#navigation-top -->
+        
+        
+             <div id="logo">
+        <a href="../../index/index.html" title="Strona główna">
+          <img src="../../sites/all/themes/dcamp/logo/index.png" alt="Strona główna" />
+        </a>
+       </div>
+                  
+            
+            
+	          <nav id="navigation" role="navigation" class="clearfix ">
+                     
+            			  <h2 class="element-invisible">Main menu</h2><ul id="main-menu" class="links clearfix"><li class="menu-1292 first"><a href="../../index/index.html" title="">Home</a></li>
+<li class="menu-1230"><a href="../../program/index.html" title="">Program</a></li>
+<li class="menu-1273"><a href="../../o-konferencji/index.html" title="">Konferencja</a></li>
+<li class="menu-1494"><a href="../../userslist/index.html" title="">UCZESTNICY</a></li>
+<li class="menu-1487"><a href="../../sponsorzy-konferencji/index.html" title="">Sponsorzy</a></li>
+<li class="menu-1387 last"><a href="../../organizatorzy/index.html" title="Kilka słów o nas!">Organizatorzy</a></li>
+</ul>                              </nav> <!-- /#navigation -->
+          </header> <!-- /#header -->
+    
+    <div id="container" class="clearfix">
+
+    <section id="main" role="main" class="clearfix">
+                        <a id="main-content"></a>
+      <h1 class="title" id="page-title">Drupal multisite w praktyce - czyli o GAIA - dystrybucji Drupala używanej w MR</h1>                  
+      
+      
+      
+	  
+	          <span class="submitted">Opublikował/a <span class="author"><a href="../../users/gdud/index.html" title="Wyświetl profil użytkownika.">gdud</a></span> o godz <time datetime="!fulldatetime" pubdate>śr., 2012-01-11 23:06</time> </span>
+      
+      
+  <div class="content">
+    <div class="field field-type-userreference field-field-speakers">
+      <div class="field-label">Prowadzący/ca:&nbsp;</div>
+    <div class="field-items">
+            <div class="field-item odd">
+                    <a href="../../users/harijari/index.html">Jarosław Sobiecki</a>        </div>
+        </div>
+</div>
+<p>Ten wykład miałby charakter case-study. Byłaby to kontynuacja wykładu Mediów Regionalnych który odbył się w zeszłym roku w II UWr, ale bardziej z naciskiem na aspekty techniczne. Ze względu na ograniczenia czasowe, przeprowadzony będzie bardziej na zasadzie sygnalizacji rozwiązań niż pełnego i szczegółowego case study.<br />
+Zarys agendy:</p>
+<ul>
+<li>Architektura rozwiązania GAIA</li>
+<li>Działające portale oparte na platformie</li>
+<li>Użyte rozwiązania (features, profile instalacyjne)</li>
+<li>Problemy z wydajnością i ich rozwiązywanie</li>
+<li> Wady i zalety użytego rozwiązania</li>
+</ul>
+<p>Język PL.</p>
+<div class="fieldgroup group-schedule">
+
+      <h2>Termin i miejsce</h2>
+
+    
+  
+  <div class="content"><div class="field field-type-nodereference field-field-session-room">
+    <div class="field-items">
+            <div class="field-item odd">
+                      <div class="field-label-inline-first">
+              Sala:&nbsp;</div>
+                    <a href="../../miejsce/sala-konferencyjna/index.html">Sala konferencyjna</a>        </div>
+        </div>
+</div>
+</div>
+
+</div>
+  </div>
+
+      <footer>
+                    <div class="links">
+          <ul class="links inline"><li class="comment_forbidden first last"><span><a href="../../user/login/index-21.html?destination=comment%2Freply%2F28%23comment-form">Zaloguj się</a> by komentować i głosować</span></li>
+</ul>        </div>
+          </footer>
+  
+    </section> <!-- /#main -->
+
+    
+           
+    </div> <!-- /#container -->
+
+    <footer id="footer" role="contentinfo" class="clearfix">
+      <div class="foot-cont">
+      <div class="copyright-inner">
+	<a href="http://drupal.org/">Drupal</a> is a registered trademark of <a href="http://buytaert.net/">Dries Buytaert</a>.</div>
+                  </div>
+    </footer> <!-- /#footer -->
+
+    
+
+</body>
+
+<!-- Mirrored from 2012.dcwroc.pl/sesje/drupal-multisite-w-praktyce-czyli-o-gaia-dystrybucji-drupala-uzywanej-w-mr by HTTrack Website Copier/3.x [XR&CO'2010], Mon, 20 Jan 2014 14:50:18 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+</html>
